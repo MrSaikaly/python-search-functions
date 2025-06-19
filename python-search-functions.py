@@ -25,9 +25,9 @@ def binary_search(value_list,target):
 
         if value_list[mid] == target : # we found our index
             return mid
-        elif value_list[mid] > target:
+        elif value_list[mid] > target: # if list value on index mid bigger than target move the high index 
             high_index= mid-1
-        else:
+        else:# else list value on index mid smaller than target move the low index 
             low_index=mid+1
 
     return -1
