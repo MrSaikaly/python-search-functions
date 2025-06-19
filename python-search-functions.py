@@ -12,9 +12,32 @@ def linear_search(value_list, target): #O(n)
     return -1
 
 
+#binary search
+
+def binary_search(value_list,target):
+    #creating the binary search
+
+    low_index=0 #setting low index
+    high_index=len(value_list)-1 # setting high index
+
+    while(low_index<=high_index): #while loop
+        mid =(low_index + high_index) //2 #setting middle index 
+
+        if value_list[mid] == target : # we found our index
+            return mid
+        elif value_list[mid] > target:
+            high_index= mid-1
+        else:
+            low_index=mid+1
+
+    return -1
+
+    print()
+
 
 #using the function
 
 my_list=[10,20,30,45,50,70]
 
-print("your target value:", 50, " is on index :_", linear_search(my_list,50))
+print("your target value:", 50, " is on index :_", linear_search(my_list,51000))
+print("your target value:", 50, " is on index :_", binary_search(my_list,10))
